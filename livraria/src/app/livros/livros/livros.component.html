@@ -1,0 +1,84 @@
+
+
+
+<mat-card>
+  <mat-card-content>
+    <mat-form-field class="example-full-width search"  color=accent>
+      <mat-label>Pesquisar</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-toolbar color=accent class="toolbar">
+      Livros Disponiveis
+
+      <div class="btn-toolbar">
+        <div>
+          <button mat-raised-button color="accent">Cadastrar Livro</button>
+        </div>
+
+      </div>
+    </mat-toolbar>
+    <table mat-table [dataSource]="livros" class="mat-elevation-z8 demo-table">
+
+      <!-- titulo Column -->
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef>Título</th>
+        <td mat-cell *matCellDef="let element">{{element.titulo}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="subtitulo">
+        <th mat-header-cell *matHeaderCellDef>Subtítulo</th>
+        <td mat-cell *matCellDef="let element">{{element.subtitulo}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="edicao">
+        <th mat-header-cell *matHeaderCellDef>Edição</th>
+        <td mat-cell *matCellDef="let element">{{element.edicao}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="resumo">
+        <th mat-header-cell *matHeaderCellDef>Resumo</th>
+        <td mat-cell *matCellDef="let element">{{element.resumo}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataPublicacao">
+        <th mat-header-cell *matHeaderCellDef> Data de Publicação </th>
+        <td mat-cell *matCellDef="let element">{{element.dataPublicacao}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="autor">
+        <th mat-header-cell *matHeaderCellDef>Autor/Autores</th>
+        <td mat-cell  *matCellDef="let element ">
+          <div *ngFor="let autor of element.autores">
+            {{autor.nome}}
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantidadePaginas">
+        <th mat-header-cell *matHeaderCellDef>Páginas</th>
+        <td mat-cell *matCellDef="let element">{{element.quantidadePaginas}}</td>
+      </ng-container>
+
+      <!-- editora Column -->
+      <ng-container matColumnDef="editora">
+        <th mat-header-cell *matHeaderCellDef>Editora</th>
+        <td mat-cell *matCellDef="let element">{{element.editora}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantidadeEstoque">
+        <th mat-header-cell *matHeaderCellDef>Quantidade em Estoque</th>
+        <td mat-cell *matCellDef="let element">{{element.quantidadeEstoque}}</td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+    </table>
+
+
+
+  </mat-card-content>
+</mat-card>
+
