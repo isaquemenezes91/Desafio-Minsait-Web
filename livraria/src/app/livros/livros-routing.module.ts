@@ -6,7 +6,8 @@ import { LivrosComponent } from './livros/livros.component';
 
 const routes: Routes = [
   {path:'',component: LivrosComponent},
-  {path:'cadastro',component: CadastroLivroComponent}
+  {path:'cadastro',component: CadastroLivroComponent},
+  {path:'editar/:id',component: CadastroLivroComponent}
 ];
 
 @NgModule({

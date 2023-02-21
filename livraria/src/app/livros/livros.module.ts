@@ -1,34 +1,47 @@
+
+import { FormularioComponent } from './../components/formulario/formulario.component';
+
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+
+import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
 import { LivrosRoutingModule } from './livros-routing.module';
 import { LivrosComponent } from './livros/livros.component';
-import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
-  declarations: [
-    LivrosComponent,
-    CadastroLivroComponent
-  ],
-  imports: [
-    CommonModule,
-    LivrosRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatInputModule,
-    MatIconModule,
-    ReactiveFormsModule,
+    declarations: [
+        LivrosComponent,
+        CadastroLivroComponent,
+        FormularioComponent
+    ],
+    imports: [
+        CommonModule,
+        LivrosRoutingModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatInputModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatDividerModule,
 
-  ]
+
+    ]
 })
 export class LivrosModule { }

@@ -12,7 +12,7 @@
 
 
     </mat-toolbar>
-    <table mat-table [dataSource]="livros" class="mat-elevation-z8 demo-table">
+    <table mat-table [dataSource]="livros" class="mat-elevation-z8 demo-table" >
 
 
       <ng-container matColumnDef="titulo">
@@ -31,7 +31,7 @@
       </ng-container>
 
       <ng-container matColumnDef="resumo">
-        <th mat-header-cell *matHeaderCellDef>Resumo</th>
+        <th mat-header-cell *matHeaderCellDef>resumo</th>
         <td mat-cell *matCellDef="let element">{{element.resumo}}</td>
       </ng-container>
 
@@ -76,7 +76,7 @@
 
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef>
-          <div class="btn-toolbar">
+          <div class="btn-cadastro">
             <div>
               <button mat-raised-button color="accent" (click)="onAdd()">Cadastrar Livro</button>
             </div>
@@ -84,18 +84,14 @@
           </div>
 
         </mat-header-cell>
-        <mat-cell *matCellDef="let element">
+        <mat-cell *matCellDef="let element" class="botoes">
 
-          <button mat-icon-button color="accent" aria-label="delete">
+          <button mat-icon-button color="accent" aria-label="delete" (click)="onEdit(element.id)">
             <mat-icon>edite</mat-icon>
           </button>
 
-          <button mat-icon-button color="accent" aria-label="delete">
-            <mat-icon>update</mat-icon>
-          </button>
-
-          <button mat-icon-button color="warn" aria-label="delete">
-            <mat-icon>delete</mat-icon>
+          <button mat-icon-button color="warn" aria-label="delete" (click)="onDelete(element.id)">
+            <mat-icon >delete</mat-icon>
           </button>
         </mat-cell>
       </ng-container>

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -11,27 +13,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-
-import { HttpClientModule } from '@angular/common/http';
-
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LivrosRoutingModule } from './livros/livros-routing.module';
-import { ComponentsModule } from './components/components.module';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations:[
+
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    HttpClientModule,
     CommonModule,
     MatTableModule,
     MatPaginatorModule,
@@ -43,12 +31,10 @@ import { ComponentsModule } from './components/components.module';
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-
-
-
-
+    MatDialogModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+
+
+
 })
-export class AppModule { }
+export class ComponentsModule { }

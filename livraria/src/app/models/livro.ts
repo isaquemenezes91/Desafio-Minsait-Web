@@ -1,3 +1,4 @@
+import { AutorDto} from "./autorDto"
 
 
 export interface Livro {
@@ -6,10 +7,10 @@ export interface Livro {
   subtitulo:string;
   resumo: string;
   quantidadePaginas: number;
-  dataPublicaca0:Date;
+  dataPublicacao:string;
   edicao:number;
   editora:string;
-  autores: Array<any>;
+  autores: string;
   quantidadeEstoque:number;
 
 }
