@@ -10,16 +10,11 @@
     <mat-toolbar color=accent class="toolbar">
       Livros Disponiveis
 
-      <div class="btn-toolbar">
-        <div>
-          <button mat-raised-button color="accent">Cadastrar Livro</button>
-        </div>
 
-      </div>
     </mat-toolbar>
     <table mat-table [dataSource]="livros" class="mat-elevation-z8 demo-table">
 
-      <!-- titulo Column -->
+
       <ng-container matColumnDef="titulo">
         <th mat-header-cell *matHeaderCellDef>Título</th>
         <td mat-cell *matCellDef="let element">{{element.titulo}}</td>
@@ -48,9 +43,19 @@
       <ng-container matColumnDef="autor">
         <th mat-header-cell *matHeaderCellDef>Autor/Autores</th>
         <td mat-cell  *matCellDef="let element ">
-          <div *ngFor="let autor of element.autores">
-            {{autor.nome}}
+          <div class="alinhamento-add-autor">
+            <div class="alinhamento-autores">
+              <div *ngFor="let autor of element.autores" >
+                <li>{{autor.nome}}</li>
+              </div>
+            </div>
+
+            <button mat-icon-button color="accent" aria-label="delete">
+              <mat-icon>add</mat-icon>
+            </button>
           </div>
+
+
         </td>
       </ng-container>
 
@@ -59,7 +64,6 @@
         <td mat-cell *matCellDef="let element">{{element.quantidadePaginas}}</td>
       </ng-container>
 
-      <!-- editora Column -->
       <ng-container matColumnDef="editora">
         <th mat-header-cell *matHeaderCellDef>Editora</th>
         <td mat-cell *matCellDef="let element">{{element.editora}}</td>
@@ -68,6 +72,32 @@
       <ng-container matColumnDef="quantidadeEstoque">
         <th mat-header-cell *matHeaderCellDef>Quantidade em Estoque</th>
         <td mat-cell *matCellDef="let element">{{element.quantidadeEstoque}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <div class="btn-toolbar">
+            <div>
+              <button mat-raised-button color="accent" (click)="onAdd()">Cadastrar Livro</button>
+            </div>
+
+          </div>
+
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+
+          <button mat-icon-button color="accent" aria-label="delete">
+            <mat-icon>edite</mat-icon>
+          </button>
+
+          <button mat-icon-button color="accent" aria-label="delete">
+            <mat-icon>update</mat-icon>
+          </button>
+
+          <button mat-icon-button color="warn" aria-label="delete">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
       </ng-container>
 
 

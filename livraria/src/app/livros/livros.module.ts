@@ -9,10 +9,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { LivrosRoutingModule } from './livros-routing.module';
 import { LivrosComponent } from './livros/livros.component';
+import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    LivrosComponent
+    LivrosComponent,
+    CadastroLivroComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +26,9 @@ import { LivrosComponent } from './livros/livros.component';
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+
   ]
 })
 export class LivrosModule { }
