@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { LivroDto } from '../../models/livroDto';
 import { LivrosService } from 'src/app/services/livros.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-formulario',
@@ -34,7 +35,8 @@ export class FormularioComponent {
     private formBuilder: FormBuilder,
     private router: Router,
     private service: LivrosService,
-    private location: Location
+    private location: Location,
+    private snackBar: MatSnackBar
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
@@ -62,10 +64,18 @@ export class FormularioComponent {
 
     this.service
       .save(this.livroDto)
-      .subscribe(() => this.router.navigate(['']));
+      .subscribe(()=>this.onSuccess());
+
+
   }
 
   onCancel() {
     this.location.back();
   }
+
+  private onSuccess() {
+    this.snackBar.open('Livro salvo com sucesso!', '', { duration: 5000 });
+    this.onCancel();
+  }
+
 }

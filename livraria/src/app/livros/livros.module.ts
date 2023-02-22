@@ -14,7 +14,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
 import { LivrosRoutingModule } from './livros-routing.module';
 import { LivrosComponent } from './livros/livros.component';
@@ -40,6 +40,7 @@ import { LivrosComponent } from './livros/livros.component';
         MatDatepickerModule,
         MatNativeDateModule,
         MatDividerModule,
+        MatSnackBarModule
 
 
     ]
