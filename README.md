@@ -32,12 +32,11 @@ ng s --open
 
 ## Documentação
 
-O projeto tem como objetivo ser destinado para o uso administrativo de uma Livraaria, manejando o fluxo de livros diariamente.
-
-- Foi utilizado o trelo como quadro Kanban para gerenciamento das atividades.
+- Foi utilizado o trello como quadro Kanban para gerenciamento das atividades.
 
 ![image](https://user-images.githubusercontent.com/51801013/220783808-c432d738-d672-4d1c-80b3-fbfcd07002d7.png)
 
+# O projeto tem como objetivo ser destinado para o uso administrativo de uma Livraria, manejando o fluxo de livros diariamente.
 
 - A página inicial exibe a lista de Livros, com botões que trazem diferentes funcionalidades
 
