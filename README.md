@@ -14,6 +14,13 @@
 - FORMULARIO PARA ADIÇÃO DE NOVO LIVRO
 - FORMULARIO PARA EDIÇÃO DE UM LIVRO CADASTRADO
 - VALIDAÇÃO PARA LIVROS JA CADASTRADOS ( TITULO, SUBTITULO, E EDIÇÃO VALIDAM ESSA CONDIÇÃO)
+# Executando o projeto localmente
+
+## Pré-requisitos
+- <a href="https://code.visualstudio.com/">Visual Code</a>
+- <a href="https://nodejs.org/en/">NodeJS</a>
+- <a href="https://angular.io/cli">Angular CLI</a>
+- <a href="https://github.com/isaquemenezes91/Desafio-Minsait">API .NET</a>
 
 ## Configuração
 
@@ -36,7 +43,7 @@ ng s --open
 
 ![image](https://user-images.githubusercontent.com/51801013/220783808-c432d738-d672-4d1c-80b3-fbfcd07002d7.png)
 
-# O projeto tem como objetivo ser destinado para o uso administrativo de uma Livraria, manejando o fluxo de livros diariamente.
+### O projeto tem como objetivo ser destinado para o uso administrativo de uma Livraria, manejando o fluxo de livros diariamente.
 
 - A página inicial exibe a lista de Livros, com botões que trazem diferentes funcionalidades
 
