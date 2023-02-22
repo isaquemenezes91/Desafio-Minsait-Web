@@ -28,3 +28,30 @@ npm install
 ```
 ng s --open
 ```
+
+
+## Documentação
+
+O projeto tem como objetivo ser destinado para o uso administrativo de uma Livraaria, manejando o fluxo de livros diariamente.
+
+- Foi utilizado o trelo como quadro Kanban para gerenciamento das atividades.
+
+![image](https://user-images.githubusercontent.com/51801013/220783808-c432d738-d672-4d1c-80b3-fbfcd07002d7.png)
+
+
+- A página inicial exibe a lista de Livros, com botões que trazem diferentes funcionalidades
+
+<div align="center"><img src="https://user-images.githubusercontent.com/51801013/220779009-d8b5caee-e78c-43d1-9c4a-47b33dd6c53f.png" width="800px"></div>
+
+
+- Ao clicar no botão cadastro redireciona para um formulario de cadastro de um novo livro.
+
+<div align="center"><img src="https://user-images.githubusercontent.com/51801013/220782602-931bdbde-f2a1-42e6-8a70-6957e85c5319.png" width="800px" ></div>
+
+- Ao clicar no botão de editar redireciona para um formulario de edição com os campos preenchidos.
+
+<div align="center"><img src="https://user-images.githubusercontent.com/51801013/220782823-17e307e5-0ea4-4881-889c-cbb8e8ffe8e8.png" width="800px" ></div>
+
+
+
+
