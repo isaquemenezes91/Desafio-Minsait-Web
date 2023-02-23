@@ -14,10 +14,13 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import { AddAutorComponent } from './add-autor/add-autor.component';
 
 @NgModule({
   declarations:[
 
+  
+    AddAutorComponent
   ],
   imports: [
     CommonModule,

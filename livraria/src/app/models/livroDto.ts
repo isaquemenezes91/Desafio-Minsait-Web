@@ -1,7 +1,7 @@
 import { AutorDto } from "./autorDto"
 
 export interface LivroDto{
-
+  id:string|number;
   titulo: string;
   subtitulo: string;
   resumo: string;

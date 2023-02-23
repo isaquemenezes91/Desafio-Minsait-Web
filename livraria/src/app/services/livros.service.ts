@@ -26,13 +26,38 @@ export class LivrosService {
 
   }
 
-  save(livro: LivroDto){
-    return this.httpClient.post(this.API, livro);
+  save(livro: Partial<LivroDto>){
+    if (livro.id){
+      return this.update(livro);
+
+
+    }
+    return this.create(livro);
+
   }
 
   delete(id:number){
     return this.httpClient.delete(`${this.API}/${id}`).pipe(first());
   }
 
+  loadById(id: string) {
+    return this.httpClient.get<Livro>(`${this.API}/${id}`);
+  }
+
+
+  create(livro: Partial<LivroDto>){
+
+    return this.httpClient.post(this.API, livro);
+
+  }
+  update(livro: Partial<LivroDto>){
+
+    return this.httpClient.put(`${this.API}/${livro.id}`,livro);
+
+  }
+
+  filter(){
+    return '';
+  }
 
 }

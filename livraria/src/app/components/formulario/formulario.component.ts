@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { LivroDto } from '../../models/livroDto';
 import { LivrosService } from 'src/app/services/livros.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Livro } from 'src/app/models/livro';
 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss'],
 })
-export class FormularioComponent {
+export class FormularioComponent implements OnInit {
   form: FormGroup;
 
   livroDto: LivroDto = {
+    id:'',
     titulo: '',
     subtitulo: '',
     resumo: '',
@@ -36,9 +38,11 @@ export class FormularioComponent {
     private router: Router,
     private service: LivrosService,
     private location: Location,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private route: ActivatedRoute
   ) {
     this.form = this.formBuilder.group({
+      id:'',
       titulo: ['', [Validators.required]],
       subtitulo: [''],
       resumo: [''],
@@ -51,7 +55,28 @@ export class FormularioComponent {
     });
   }
 
+  ngOnInit(): void {
+    const livro:LivroDto =this.route.snapshot.data['livro'];
+
+    this.form.setValue({
+      id: livro.id,
+      titulo: livro.titulo,
+      subtitulo: livro.subtitulo,
+      resumo: livro.resumo,
+      quantidadePaginas: livro.quantidadePaginas,
+      dataPublicacao: livro.dataPublicacao,
+      edicao: livro.edicao,
+      editora: livro.editora,
+      autores: '',
+      quantidadeEstoque:livro.quantidadeEstoque
+    })
+
+    console.log(livro.id)
+  }
+
+
   onSubmit() {
+    this.livroDto.id = this.form.value.id;
     this.livroDto.titulo = this.form.value.titulo;
     this.livroDto.subtitulo = this.form.value.subtitulo;
     this.livroDto.resumo = this.form.value.resumo;
