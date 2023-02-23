@@ -5,14 +5,14 @@
   <mat-card-content>
     <mat-form-field>
       <mat-label>Filter</mat-label>
-      <input matInput  placeholder="" #input>
+      <input matInput  placeholder="" #input  (keyup)="applyFilter($event)">
     </mat-form-field>
     <mat-toolbar color=accent class="toolbar">
       Livros Disponiveis
 
 
     </mat-toolbar>
-    <table mat-table [dataSource]="livros" class="mat-elevation-z8 demo-table" >
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" >
 
 
       <ng-container matColumnDef="titulo">

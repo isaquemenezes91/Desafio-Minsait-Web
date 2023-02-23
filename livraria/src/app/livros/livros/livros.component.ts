@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { LivrosService } from '../../services/livros.service';
 import { Livro } from '../../models/livro';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { catchError, Observable, of } from 'rxjs';
+import { catchError, Observable, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
@@ -17,7 +17,8 @@ export class LivrosComponent implements OnInit {
 
 
   @Output() edit = new EventEmitter();
-  livros: Observable<Livro[]>;
+  livros: Livro [] =[];
+  dataSource = new MatTableDataSource(this.livros);
 
   displayedColumns = [
     'titulo',
@@ -38,18 +39,13 @@ export class LivrosComponent implements OnInit {
 
 
   constructor(private livrosService: LivrosService, private router: Router, private formBuilder:FormBuilder,public dialog: MatDialog) {
-    this.livros = this.livrosService.list().pipe(
-      catchError((error) => {
-        return of([]);
-      })
-
-    );
-
+    this.livrosService.list().subscribe(livros =>this.dataSource = new MatTableDataSource(livros) )
 
   }
 
   ngOnInit(): void {
 
+    console.log(this.livros)
 
   }
 
@@ -74,5 +70,12 @@ export class LivrosComponent implements OnInit {
 
   }
 
+  applyFilter(event: Event) {
+
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+
+  }
 
 }

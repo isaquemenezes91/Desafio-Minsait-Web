@@ -20,7 +20,6 @@ export class LivrosService {
 
     return this.httpClient.get<Livro[]>(this.API)
     .pipe(
-      first(),
       tap(livros => console.log(livros))
     );
 
