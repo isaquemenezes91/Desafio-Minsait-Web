@@ -50,7 +50,7 @@
               </div>
             </div>
 
-            <button mat-icon-button color="accent" aria-label="delete" (click)="openDialog()">
+            <button mat-icon-button color="accent"  (click)="openDialog(element.id)">
               <mat-icon>add</mat-icon>
             </button>
           </div>
@@ -86,11 +86,11 @@
         </mat-header-cell>
         <mat-cell *matCellDef="let element" class="botoes">
 
-          <button mat-icon-button color="accent" aria-label="delete" (click)="onEdit(element.id)">
+          <button mat-icon-button color="accent" (click)="onEdit(element.id)">
             <mat-icon>edite</mat-icon>
           </button>
 
-          <button mat-icon-button color="warn" aria-label="delete" (click)="onDelete(element.id)">
+          <button mat-icon-button color="warn"  (click)="onDelete(element.id)">
             <mat-icon >delete</mat-icon>
           </button>
         </mat-cell>

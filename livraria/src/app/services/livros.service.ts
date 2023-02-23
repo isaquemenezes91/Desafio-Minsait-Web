@@ -4,6 +4,7 @@ import { Livro } from '../models/livro';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { first, tap, of } from 'rxjs';
+import { AutorAdd } from '../models/autorAdd';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { first, tap, of } from 'rxjs';
 export class LivrosService {
 
   private readonly API = "https://localhost:7266/v1/api/Livro";
-
+  private readonly API_AUTOR = "https://localhost:7266/api/Autor";
 
 
   constructor(private httpClient: HttpClient ) { }
@@ -55,8 +56,9 @@ export class LivrosService {
 
   }
 
-  filter(){
-    return '';
+  addAutor(autor: Partial<AutorAdd>){
+    return this.httpClient.post(this.API_AUTOR, autor);
+
   }
 
 }

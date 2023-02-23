@@ -61,10 +61,11 @@ export class LivrosComponent implements OnInit {
     this.router.navigate([`livros/editar/${id}`]);
   }
 
-  openDialog(){
+  openDialog(_id : any){
     this.dialog.open(AddAutorComponent,{
       data:{
-        id: 1
+       livroId: _id
+
       }
     });
 

@@ -51,7 +51,7 @@ export class FormularioComponent implements OnInit {
       edicao: [1],
       editora: ['', [Validators.required]],
       autores: ['', [Validators.required]],
-      quantidadeEstoque: [0, [Validators.required]],
+      quantidadeEstoque: [1, [Validators.required]],
     });
   }
 
