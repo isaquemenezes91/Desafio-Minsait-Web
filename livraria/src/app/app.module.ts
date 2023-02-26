@@ -19,8 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LivrosRoutingModule } from './livros/livros-routing.module';
-import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [

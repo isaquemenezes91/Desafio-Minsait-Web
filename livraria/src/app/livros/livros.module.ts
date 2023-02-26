@@ -1,3 +1,4 @@
+
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -13,6 +14,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { AddAutorComponent } from '../components/add-autor/add-autor.component';
 
 import { FormularioComponent } from './../components/formulario/formulario.component';
 import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
@@ -26,7 +28,8 @@ import { LivrosComponent } from './livros/livros.component';
         LivrosComponent,
         CadastroLivroComponent,
         FormularioComponent,
-        EditarLivroComponent
+        EditarLivroComponent,
+        AddAutorComponent
     ],
     imports: [
         CommonModule,

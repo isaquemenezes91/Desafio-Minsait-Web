@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LivrosComponent } from './livros/livros.component';
-import { LivrosResolver } from './guards/livros.resolver';
+import { LivrosResolver } from '../guards/livros.resolver';
 
 const routes: Routes = [
   {path:'',component: LivrosComponent},

@@ -1,5 +1,5 @@
 
-import { Livro } from './../../models/livro';
+import { Livro } from '../models/livro';
 import { Injectable } from '@angular/core';
 import {
   Router,

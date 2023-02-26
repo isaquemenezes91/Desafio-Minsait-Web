@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LivroDto } from '../../models/livroDto';
 import { LivrosService } from 'src/app/services/livros.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Livro } from 'src/app/models/livro';
+
 
 @Component({
   selector: 'app-formulario',
